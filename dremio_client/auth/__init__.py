@@ -44,6 +44,10 @@ def auth(base_url, config_dict):
             token = config_auth(base_url, config_dict)
             _write_token(token, config_dict)
             return token
+        elif auth_type =="pat":
+            token = config_dict["auth"]["pat"].get()
+            _write_token(token, config_dict)
+            return token
     raise NotImplementedError("Auth type is unsupported " + auth_type)
 
 
