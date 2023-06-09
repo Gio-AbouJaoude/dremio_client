@@ -37,7 +37,7 @@ from ..error import (
 
 
 def _get_headers(token):
-    headers = {"Authorization": "_dremio{}".format(token), "content-type": "application/json"}
+    headers = {"Authorization": "Bearer {}".format(token), "content-type": "application/json"}
     return headers
 
 

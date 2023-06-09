@@ -30,9 +30,9 @@ from .dremio_client import DremioClient
 from .dremio_simple_client import SimpleClient
 from .model.endpoints import catalog, catalog_item, job_results, job_status, sql
 
-__author__ = """Ryan Murray"""
-__email__ = "rymurr@gmail.com"
-__version__ = "0.14.0"
+__author__ = """Ryan Murray / Gio Abou Jaoude"""
+__email__ = "rymurr@gmail.com / gga222@nyu.edu"
+__version__ = "0.14.1"
 
 
 def get_config(config_dir=None, args=None):
