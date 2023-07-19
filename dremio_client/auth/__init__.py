@@ -37,17 +37,14 @@ __all__ = ["basic_auth", "config_auth", "auth"]
 
 def auth(base_url, config_dict):
     auth_type = config_dict["auth"]["type"].get()
-    try:
-        return _existing_token(config_dict)
-    except KeyError:
-        if auth_type == "basic":
-            token = config_auth(base_url, config_dict)
-            _write_token(token, config_dict)
-            return token
-        elif auth_type =="pat":
-            token = config_dict["auth"]["pat"].get()
-            _write_token(token, config_dict)
-            return token
+    if auth_type == "basic":
+        token = config_auth(base_url, config_dict)
+        _write_token(token, config_dict)
+        return token
+    elif auth_type =="pat":
+        token = config_dict["auth"]["pat"].get()
+        _write_token(token, config_dict)
+        return token
     raise NotImplementedError("Auth type is unsupported " + auth_type)
 
 
